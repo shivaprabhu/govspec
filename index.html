@@ -63,12 +63,14 @@
       color: #000;
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      word-break: break-word;
     }
     .cta-subtitle {
       color: #000;
       font-size: 1.15rem;
       text-align: center;
       margin-bottom: 2.5rem;
+      word-break: break-word;
     }
     .cta-form-row {
       display: flex;
@@ -77,6 +79,7 @@
       gap: 0;
       margin-bottom: 2rem;
       flex-wrap: wrap;
+      width: 100%;
     }
     .cta-form-row .form-control {
       background: #e7e7e7;
@@ -86,6 +89,9 @@
       min-width: 320px;
       font-size: 1.1rem;
       padding: 0.75rem 1rem;
+      flex: 1 1 220px;
+      width: 100%;
+      max-width: 400px;
     }
     .cta-form-row .form-control:focus {
       background: #e7e7e7;
@@ -105,6 +111,7 @@
       padding: 0.75rem 1.5rem;
       transition: background 0.2s;
       margin-left: 1px;
+      flex-shrink: 0;
     }
     .cta-form-row .btn:hover {
       background: #b8b8b8;
@@ -119,6 +126,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 2rem;
+      width: 100%;
     }
     .feature-list svg {
       color: #000;
@@ -127,12 +135,24 @@
     }
     .feature-list span {
       max-width: 300px;
+      word-break: break-word;
+    }
+    @media (max-width: 900px) {
+      .cta-card { padding: 2rem 0.5rem; }
+      .cta-title { font-size: 2rem; }
+      .cta-subtitle { font-size: 1rem; }
     }
     @media (max-width: 600px) {
-      .cta-card { padding: 2rem 0.5rem; }
-      .cta-form-row .form-control { min-width: 0; width: 100%; }
-      .cta-form-row { flex-direction: column; gap: 0.5rem; }
-      .cta-form-row .btn, .cta-form-row .form-control { border-radius: 0.375rem; }
+      .cta-card { padding: 1.2rem 0.2rem; }
+      .cta-form-row { flex-direction: column; gap: 0.5rem; align-items: stretch; }
+      .cta-form-row .form-control, .cta-form-row .btn { border-radius: 0.375rem; min-width: 0; max-width: 100%; width: 100%; }
+      .cta-form-row .form-control{max-height: 22px;}
+      .feature-list { flex-direction: column; gap: 1.2rem; }
+      .feature-list span { max-width: 100%; }
+    }
+    @media (max-width: 400px) {
+      .cta-title { font-size: 1.3rem; }
+      .cta-card { padding: 0.5rem 0.1rem; }
     }
   </style>
 </head>

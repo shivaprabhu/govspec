@@ -61,6 +61,11 @@ b{
   color: #000;
   border: none;
 }
+input.form-control:active,input.form-control:focus{
+  outline: 1px solid #000!important;
+  outline-offset: -1px!important;
+} 
+
 .cta-form-row .btn {
   background: #000;
   color: #fff;
